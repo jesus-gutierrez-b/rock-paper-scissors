@@ -6,7 +6,53 @@
 </head>
 <body>
     <script>
-        
+        function computerPlay(){
+            let play = Math.floor(Math.random() *3);
+
+            if(play === 0){
+                return "rock";
+            } else if(play === 1){
+                return "paper";
+            } else{
+                return "scissors";
+            }
+        }// end computerPlay function
+
+        function playRound(playerSelection, computerSelection){
+            if(playerSelection === "rock"){
+                if(computerSelection === "scissors"){
+                    return "You win! Rock beats Scissors.";
+                }else if(computerSelection === "paper"){
+                    return "You lose! Paper beats Rock.";
+                }else if(computerSelection === "rock"){
+                    return "It's a tie! No winner.";
+                }else{
+                    return "Something went terribly wrong.";
+                }
+            }else if(playerSelection === "paper"){
+                if(computerSelection === "scissors"){
+                    return "You lose! Scissors beat Paper.";
+                }else if(computerSelection === "paper"){
+                    return "It's a tie! No winner.";
+                }else if(computerSelection === "rock"){
+                    return "You win! Paper beats Rock.";
+                }else{
+                    return "Something went terribly wrong.";
+                }
+            }else if(playerSelection === "scissors"){
+                if(computerSelection === "scissors"){
+                    return "It's a tie! No winner.";
+                }else if(computerSelection === "paper"){
+                    return "You win! Scissors beat Paper.";
+                }else if(computerSelection === "rock"){
+                    return "You lose! Rock beats Scissors.";
+                }else{
+                    return "Something went terribly wrong.";
+                }
+            } else{
+                return "Something went terribly wrong.";
+            }
+        }// end playRound function
     </script>
 </body>
 </html>
