@@ -13,12 +13,17 @@
                 return "rock";
             } else if(play === 1){
                 return "paper";
-            } else{
+            } else if(play === 2){
                 return "scissors";
+            } else{
+                return "Something went terribly wrong."
             }
         }// end computerPlay function
 
-        function playRound(playerSelection, computerSelection){
+        function playRound(playerSelection = "rock", computerSelection = "rock"){
+            playerSelection = playerSelection.toLocaleLowerCase();
+            computerSelection = computerSelection.toLocaleLowerCase();
+
             if(playerSelection === "rock"){
                 if(computerSelection === "scissors"){
                     return "You win! Rock beats Scissors.";
