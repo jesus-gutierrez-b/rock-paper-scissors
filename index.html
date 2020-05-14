@@ -26,31 +26,40 @@
 
             if(playerSelection === "rock"){
                 if(computerSelection === "scissors"){
-                    return "You win! Rock beats Scissors.";
+                    return "rs";
+                    // return "You win! Rock beats Scissors.";
                 }else if(computerSelection === "paper"){
-                    return "You lose! Paper beats Rock.";
+                    return "rp";
+                    // return "You lose! Paper beats Rock.";
                 }else if(computerSelection === "rock"){
-                    return "It's a tie! No winner.";
+                    return "rr";
+                    // return "It's a tie! Both chose 'Rock'. No winner.";
                 }else{
                     return "Something went terribly wrong.";
                 }
             }else if(playerSelection === "paper"){
                 if(computerSelection === "scissors"){
-                    return "You lose! Scissors beat Paper.";
+                    return "ps";
+                    // return "You lose! Scissors beat Paper.";
                 }else if(computerSelection === "paper"){
-                    return "It's a tie! No winner.";
+                    return "pp";
+                    // return "It's a tie! Both chose 'Paper'. No winner.";
                 }else if(computerSelection === "rock"){
-                    return "You win! Paper beats Rock.";
+                    return "pr";
+                    // return "You win! Paper beats Rock.";
                 }else{
                     return "Something went terribly wrong.";
                 }
             }else if(playerSelection === "scissors"){
                 if(computerSelection === "scissors"){
-                    return "It's a tie! No winner.";
+                    return "ss";
+                    // return "It's a tie! Both chose 'Scissors'. No winner.";
                 }else if(computerSelection === "paper"){
-                    return "You win! Scissors beat Paper.";
+                    return "sp";
+                    // return "You win! Scissors beat Paper.";
                 }else if(computerSelection === "rock"){
-                    return "You lose! Rock beats Scissors.";
+                    return "sr";
+                    // return "You lose! Rock beats Scissors.";
                 }else{
                     return "Something went terribly wrong.";
                 }
@@ -58,6 +67,10 @@
                 return "Something went terribly wrong.";
             }
         }// end playRound function
+
+        function game(){
+
+        }// end game
     </script>
 </body>
 </html>
