@@ -1,12 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Rock, Paper, Scissors</title>
+    <title>Rock, Paper, Scissors GUI</title>
     <meta charset="UTF-8"/>
 </head>
 <body>
-    <script>
+    <div id="viewport">
+        <h1>Rock, Paper, Scissors</h1>
+        
+        <div id="score">
+            <p id="playerScore">Player: </p>
+            <p id="computerScore">Computer: </p>
+        </div>
+        
+        <!-- Player's choice -->
+        <main>
+            <img id="rock" src="" alt="rock">
+            <img id="paper" src="" alt="paper">
+            <img id="scissors" src="" alt="scissors">
+        </main> 
 
-    </script>
+        <div id="playRound">
+            <img id="playerSelection" src="" alt="player's choice among rock, paper or scissors">
+            <img id="computerSelection" src="" alt="player's choice among rock, paper or scissors">
+            <p id="outcome"></p>
+        </div>
+    </div>
+    
+    <script src="game.js"></script>
 </body>
 </html>
