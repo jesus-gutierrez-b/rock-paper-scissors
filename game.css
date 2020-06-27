@@ -7,3 +7,8 @@
     background: url("images/table.jpg") no-repeat center fixed;
     background-size: cover;
 }
+
+#rock, #paper, #scissors{
+    width: 125px;
+    height: 125px;
+}
