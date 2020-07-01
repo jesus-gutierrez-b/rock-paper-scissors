@@ -8,7 +8,7 @@
     background-size: cover;
 }
 
-#rock, #paper, #scissors{
+#rock, #paper, #scissors, #playerSelection, #computerSelection{
     width: 125px;
     height: 125px;
 }

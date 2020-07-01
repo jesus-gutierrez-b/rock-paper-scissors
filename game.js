@@ -1,5 +1,50 @@
 // Code for the rock, paper, scissors game with GUI
 
+let playerScore = 0;
+let computerScore = 0;
+
+const pScore = document.getElementById("playerScore");
+const cScore = document.getElementById("computerScore");
+
+const rock = document.getElementById("rock");
+const paper = document.getElementById("paper");
+const scissors = document.getElementById("scissors");
+
+const playerSel = document.getElementById("playerSelection");
+const computerSel = document.getElementById("computerSelection"); 
+const roundOutcome = document.getElementById("outcome");
+
+rock.addEventListener("click", () => {
+    playerSel.src = "images/rock.jpeg";
+    playRound("rock", computerPlay());
+});
+
+paper.addEventListener("click", () => {
+    playerSel.src = "images/paper.jpeg";
+    playRound("paper", computerPlay());
+});
+
+scissors.addEventListener("click", () => {
+    playerSel.src = "images/scissors.jpeg";
+    playRound("scissors", computerPlay());
+});
+
+updateScore();
+
+function restart(){
+    playerScore = 0;
+    computerScore = 0;
+    updateScore();
+    playerSel.src = "";
+    computerSel.src = "";
+    roundOutcome.textContent = "";    
+}
+
+function updateScore(){
+    pScore.textContent = `Player: ${playerScore}`;
+    cScore.textContent = `Computer: ${computerScore}`;
+}
+
 function computerPlay(){
     let play = Math.floor(Math.random() *3);
 
@@ -18,51 +63,70 @@ function playRound(playerSelection = "rock", computerSelection = "rock"){
     playerSelection = playerSelection.toLocaleLowerCase();
     computerSelection = computerSelection.toLocaleLowerCase();
 
+    computerSel.src = `images/${computerSelection}.jpeg`;
+    
     if(playerSelection === "rock"){
         if(computerSelection === "scissors"){
-            // return "rs";
-            return "You win! Rock beats Scissors.";
+            playerScore++;
+            roundOutcome.textContent = "You win! Rock beats Scissors.";
         }else if(computerSelection === "paper"){
-            // return "rp";
-            return "You lose! Paper beats Rock.";
+            computerScore++;
+            roundOutcome.textContent = "You lose! Paper beats Rock.";
         }else if(computerSelection === "rock"){
-            // return "rr";
-            return "It's a tie! Both chose 'Rock'. No winner!";
+            roundOutcome.textContent = "It's a tie! Both chose 'Rock'. No winner!";
         }else{
-            return "Something went terribly wrong.";
+            roundOutcome.textContent = "Something went terribly wrong.";
         }
     }else if(playerSelection === "paper"){
         if(computerSelection === "scissors"){
-            // return "ps";
-            return "You lose! Scissors beat Paper.";
+            computerScore++;
+            roundOutcome.textContent = "You lose! Scissors beat Paper.";
         }else if(computerSelection === "paper"){
-            // return "pp";
-            return "It's a tie! Both chose 'Paper'. No winner!";
+            roundOutcome.textContent = "It's a tie! Both chose 'Paper'. No winner!";
         }else if(computerSelection === "rock"){
-            // return "pr";
-            return "You win! Paper beats Rock.";
+            playerScore++;
+            roundOutcome.textContent = "You win! Paper beats Rock.";
         }else{
-            return "Something went terribly wrong.";
+            roundOutcome.textContent = "Something went terribly wrong.";
         }
     }else if(playerSelection === "scissors"){
         if(computerSelection === "scissors"){
-            // return "ss";
-            return "It's a tie! Both chose 'Scissors'. No winner!";
+            roundOutcome.textContent = "It's a tie! Both chose 'Scissors'. No winner!";
         }else if(computerSelection === "paper"){
-            // return "sp";
-            return "You win! Scissors beat Paper.";
+            playerScore++;
+            roundOutcome.textContent = "You win! Scissors beat Paper.";
         }else if(computerSelection === "rock"){
-            // return "sr";
-            return "You lose! Rock beats Scissors.";
+            computerScore++;
+            roundOutcome.textContent = "You lose! Rock beats Scissors.";
         }else{
-            return "Something went terribly wrong.";
+            roundOutcome.textContent = "Something went terribly wrong.";
         }
-    } else{
-        return "Something went terribly wrong.";
+    }else{
+        roundOutcome.textContent = "Something went terribly wrong.";
+    }
+
+    updateScore();
+
+    if(playerScore >= 5){
+        alert(`Final Score
+Player: ${playerScore}
+Computer: ${computerScore}
+
+Congratulations! You won the match!`);
+
+        restart();
+    }else if(computerScore >= 5){
+        alert(`Final Score
+Player: ${playerScore}
+Computer: ${computerScore}
+        
+Too bad! you lost the match!`);
+
+        restart();
     }
 }// end playRound function
 
-function game(){
+/*function game(){
     let playerScore = 0;
     let computerScore = 0;
     
@@ -114,4 +178,4 @@ Final score:
 Player: ${playerScore}
 Computer: ${computerScore}`);
     } 
-}// end game
+}// end game */
