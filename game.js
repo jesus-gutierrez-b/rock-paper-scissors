@@ -141,4 +141,3 @@ Too bad! you lost the match!`);
         restart();
     }
 }// end playRound function
-
