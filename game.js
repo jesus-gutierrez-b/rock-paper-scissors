@@ -86,7 +86,7 @@ function playRound(playerSelection = "rock", computerSelection = "scissors"){
             computerScore++;
             roundOutcome.textContent = "You lose! Paper beats Rock.";
         }else if(computerSelection === "rock"){
-            roundOutcome.textContent = "It's a tie! Both chose 'Rock'. No winner!";
+        roundOutcome.textContent = "It's a tie! Both chose Rock. No winner!";
         }else{
             roundOutcome.textContent = "Something went terribly wrong.";
         }
@@ -96,7 +96,7 @@ function playRound(playerSelection = "rock", computerSelection = "scissors"){
             computerScore++;
             roundOutcome.textContent = "You lose! Scissors beat Paper.";
         }else if(computerSelection === "paper"){
-            roundOutcome.textContent = "It's a tie! Both chose 'Paper'. No winner!";
+            roundOutcome.textContent = "It's a tie! Both chose Paper. No winner!";
         }else if(computerSelection === "rock"){
             playerScore++;
             roundOutcome.textContent = "You win! Paper beats Rock.";
@@ -106,7 +106,7 @@ function playRound(playerSelection = "rock", computerSelection = "scissors"){
         // Each scenario when the player chooses scissors
     }else if(playerSelection === "scissors"){
         if(computerSelection === "scissors"){
-            roundOutcome.textContent = "It's a tie! Both chose 'Scissors'. No winner!";
+            roundOutcome.textContent = "It's a tie! Both chose Scissors. No winner!";
         }else if(computerSelection === "paper"){
             playerScore++;
             roundOutcome.textContent = "You win! Scissors beat Paper.";

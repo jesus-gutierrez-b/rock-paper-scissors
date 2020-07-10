@@ -12,3 +12,27 @@
     width: 125px;
     height: 125px;
 }
+
+h1, h4, #outcome, #score{
+    text-align: center;    
+    color: saddlebrown; 
+}
+
+main, #playRound{
+    float: inline-start;
+    max-width: 255.09px;
+}
+
+#game{
+    margin: 10px auto;
+    width: 45%;
+}
+
+main{
+    margin-right: 25px;
+}
+
+#rock{
+    display: block;
+    margin: auto auto 4.5px;
+}
