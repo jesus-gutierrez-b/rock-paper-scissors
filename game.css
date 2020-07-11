@@ -36,3 +36,26 @@ main{
     display: block;
     margin: auto auto 4.5px;
 }
+
+@media screen and (max-width: 1163px) {
+    main, #playRound{
+        float: none;
+        margin: 0 auto;
+        max-width: 255.09px;
+    }
+    
+    #game{
+        margin: 0 auto;
+        width: 50%;
+    }
+}
+
+@media screen and (min-height: 667px){
+    #score{
+        margin: 50px auto;
+    }
+
+    main{
+        margin-bottom: 80px;
+    }
+}
